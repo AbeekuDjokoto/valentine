@@ -1,0 +1,74 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #d80032;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    text-align: center;
+}
+
+.button_flex {
+    display: flex;
+    gap: 10px;
+}
+
+#noButton {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    cursor: pointer;
+}
+
+header {
+    margin-bottom: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #ef233c;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #ff4942;
+}
+
+.hidden {
+    display: none;
+}
+
+#valentineMessage {
+    margin-top: 20px;
+}
+
+img {
+    width: 100%;
+    max-width: 300px;
+    margin-top: 10px;
+    border-radius: 10px;
+}
+
+.heart-animation {
+    width: 100px;
+    height: 100px;
+    background: url('https://tenor.com/view/happy-heart-gif-10343309966777135030') no-repeat center/contain;
+    animation: heartBeat 1s infinite alternate;
+}
+
+@keyframes heartBeat {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.1);
+    }
+}

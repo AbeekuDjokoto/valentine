@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will You Be My Valentine?</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <img src="./cute_animals.svg" alt="Cute Animals">
+        <header>
+            <h1>Will You Be My Valentine?</h1>
+        </header>
+        <div id="valentineMessage" class="hidden">
+            <p>You mean the world to me, and I would be honored to have you as my Valentine. 🌟</p>
+        </div>
+        <div class="button_flex">
+            <button id="yesButton" onclick="revealMessage('Yes')">Yes</button>
+            <button id="noButton" onmouseover="moveAway()">No</button>
+        </div>
+       
+    </div>
+  
+
+    <script>
+        function moveAway() {
+            let noButton = document.getElementById('noButton');
+            document.addEventListener('mousemove', function (e) {
+                const distanceX = e.clientX - noButton.getBoundingClientRect().right;
+                const distanceY = e.clientY - noButton.getBoundingClientRect().bottom;
+
+                if (Math.abs(distanceX) < 50 && Math.abs(distanceY) < 50) {
+                    noButton.style.transition = 'right 0.5s ease-in-out';
+                    noButton.style.right = Math.floor(Math.random() * window.innerWidth - noButton.clientWidth) + 'px';
+                }
+            });
+        }
+
+        function revealMessage(answer) {
+    var messageDiv = document.getElementById("valentineMessage");
+    var yesButton = document.getElementById("yesButton");
+    var noButton = document.getElementById("noButton");
+
+    if (answer === 'Yes') {
+        messageDiv.innerHTML = "<p>I can wait to show how much you mean to me. I love you Teddy! 🥰</p>";
+    } 
+    messageDiv.classList.remove("hidden");
+    yesButton.style.display = "none";
+    noButton.style.display = "none";
+}
+    </script>
+</body>
+</html>
